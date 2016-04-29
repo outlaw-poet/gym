@@ -3,7 +3,7 @@ try:
     import pachi_py
 except ImportError as e:
     # The dependency group [pachi] should match the name is setup.py.
-    raise error.DependencyNotInstalled('{}. (HINT: you may need to install the Go dependencies via "pip install gym[pachi].)"'.format(e))
+    raise error.DependencyNotInstalled('{}. (HINT: you may need to install the Go dependencies via "pip install gym[pachi]".)'.format(e))
 
 import numpy as np
 import gym
@@ -96,7 +96,7 @@ def _play(black_policy_fn, white_policy_fn, board_size=19):
     moves = []
 
     prev_state, prev_action = None, None
-    curr_state = GoState(CreateBoard(board_size), BLACK)
+    curr_state = GoState(pachi_py.CreateBoard(board_size), BLACK)
 
     while not curr_state.board.is_terminal:
         a = (black_policy_fn if curr_state.color == BLACK else white_policy_fn)(curr_state, prev_state, prev_action)

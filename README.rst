@@ -37,7 +37,7 @@ You can perform a minimal install of ``gym`` with:
 
 .. code:: shell
 	  
-	  git clone git@github.com:openai/gym.git
+	  git clone https://github.com/openai/gym.git
 	  cd gym
 	  pip install -e .
 
@@ -69,6 +69,12 @@ in the ``mujoco-py`` package for help.
 For the install to succeed, you'll need to have some system packages
 installed. We'll build out the list here over time; please let us know
 what you end up installing on your platform.
+
+On OSX:
+
+.. code:: shell
+
+	  brew install cmake
 
 On Ubuntu 14.04:
 
@@ -129,7 +135,7 @@ sequence.
 Atari
 -----
 
-The Atari environments are a variety of Atari video games. If you didn't do the full install, you can install dependencies via ``pip install -e .[atari]`` and then get started as follow:
+The Atari environments are a variety of Atari video games. If you didn't do the full install, you can install dependencies via ``pip install -e .[atari]`` (you'll need ``cmake`` installed) and then get started as follow:
 
 .. code:: python
 
@@ -143,7 +149,7 @@ This will install ``atari-py``, which automatically compiles the `Arcade Learnin
 Board games
 -----------
 
-The board game environments are a variety of board games. If you didn't do the full install, you can install dependencies via ``pip install -e .[board_game]`` and then get started as follow:
+The board game environments are a variety of board games. If you didn't do the full install, you can install dependencies via ``pip install -e .[board_game]`` (you'll need ``cmake`` installed) and then get started as follow:
 
 .. code:: python
 
@@ -188,7 +194,7 @@ Toy environments which are text-based. There's no extra dependency to install, s
 .. code:: python
 
 	  import gym
-	  env = gym.make('FrozenLake')
+	  env = gym.make('FrozenLake-v0')
 	  env.reset()
 	  env.render()
 
@@ -205,7 +211,7 @@ See the ``examples`` directory.
 Testing
 =======
 
-We are using `nose2 <https://github.com/nose-devs/nose2>`_ for tests. You can run them via
+We are using `nose2 <https://github.com/nose-devs/nose2>`_ for tests. You can run them via:
 
 .. code:: shell
 
